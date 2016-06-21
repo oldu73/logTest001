@@ -1,9 +1,12 @@
 package com.company;
 
+import org.springframework.stereotype.Service;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Service
 public class StderrLogger implements ILog {
     // format des dates
     private final DateFormat format = new SimpleDateFormat(

@@ -63,8 +63,11 @@ public class MyApp1 {
         context.registerShutdownHook();
 
         // recuperer les beans
-        ILog logger = context.getBean("logger", ILog.class);
-        use(logger);
+        //ILog logger = context.getBean("logger", ILog.class);
+
+        IBusiness business = context.getBean(IBusiness.class);
+
+        use(business);
     }
 
     public static void main(String[] args) {

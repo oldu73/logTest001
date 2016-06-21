@@ -1,7 +1,14 @@
 package com.company;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service
 public class SimpleBusiness implements IBusiness {
 
+    @Autowired
+    @Qualifier("test")
     private ILog logger;
 
     public void init() {

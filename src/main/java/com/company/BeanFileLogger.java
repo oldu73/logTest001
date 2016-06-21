@@ -1,5 +1,9 @@
 package com.company;
 
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -20,6 +24,7 @@ public class BeanFileLogger implements ILog {
     private PrintWriter file;
 
     // initialisation du service
+    @PostConstruct
     public void init() {
         if (fileName == null) {
             throw new IllegalStateException("no fileName");
@@ -33,6 +38,7 @@ public class BeanFileLogger implements ILog {
     }
 
     // fermeture du service
+    @PreDestroy
     public void close() {
         file.close();
     }
